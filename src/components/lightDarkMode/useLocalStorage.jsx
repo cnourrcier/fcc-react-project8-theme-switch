@@ -21,3 +21,13 @@ export default function useLocalStorage(key, defaultValue) {
 
     return [value, setValue];
 }
+
+// INITIAL LOAD
+// The initializer function for useState runs once during the initial render to set the initial state value. 
+// This value is either from localStorage or defaultValue.
+
+// SUBSEQUENT RENDERS
+// useState is not re-invoked during subsequent renders of the component.
+// The state value is updated by setTheme, 
+// and this updated value is used by useLocalStorage when it runs its effect hook during the re-render. 
+// This is how the theme is updated and reflected in localStorage.
